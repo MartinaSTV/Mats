@@ -1,14 +1,29 @@
-import NavBarForMeny from "@/Components/NavBarForMeny";
+import Show from "@/Components/show";
+import dbClient from "@/db/mongodb";
+import { IEvents } from "@/modules/global";
 
-const page = () => {
+//TODO Error Message
+const pageHappening = async () => {
+  let events;
+  try {
+    events = await dbClient
+      .db("quarterMen")
+      .collection<IEvents>("shows")
+      .find()
+      .toArray();
+  } catch (error) {
+    console.log(error);
+  }
+
+  const RemoveEvent = () => {};
+
   return (
     <section>
-      <header className="flex items-center pt-10 pb-10">
-        <h1 className="text-xl ml-10">The Quarter Men</h1>
-        <NavBarForMeny />
-      </header>
       <h1>Pågång</h1>
+      {events?.map((data, idx) => (
+        <Show key={idx + "event"} event={data} />
+      ))}
     </section>
   );
 };
-export default page;
+export default pageHappening;

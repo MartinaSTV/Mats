@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBarForMeny from "@/Components/NavBarForMeny";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sv">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="flex items-center pt-10 pb-10 bg-sky-700 text-white">
+          <h1 className="text-xl ml-10">The Quarter Men</h1>
+          <NavBarForMeny />
+        </header>
+        {children}
+        <footer className="bg-sky-400 text-black ">
+          <div className="flex flex-col">
+            <Link href="/Login">Admin </Link>
+            <Link href="/AddHappening">Lägg till event</Link>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
