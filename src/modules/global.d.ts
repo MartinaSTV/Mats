@@ -1,6 +1,5 @@
-import { ObjectId } from "mongodb";
 interface IEvents {
-  _id: ObjectId;
+  _id: string;
   eventName: string;
   place: string;
   about: string;

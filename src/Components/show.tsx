@@ -1,10 +1,20 @@
-import { IEvents } from "@/modules/global";
+"use client";
 
 interface IPropEvent {
   event: IEvents;
 }
 
 const Show = ({ event }: IPropEvent) => {
+  const removeEvent = async () => {
+    try {
+      const resp = await fetch(`/api/removeEvent?id=${event._id}`, {
+        method: "DELETE",
+      });
+      return resp;
+    } catch (error) {
+      console.log("knde inte ta bort");
+    }
+  };
   return (
     <section className="border mt-5 mb-5">
       <h2>{event.eventName}</h2>
@@ -14,6 +24,14 @@ const Show = ({ event }: IPropEvent) => {
         <h3>Information</h3>
         <p>{event.about}</p>
       </div>
+
+      <button
+        onClick={() => {
+          removeEvent();
+        }}
+      >
+        Ta bort event
+      </button>
     </section>
   );
 };

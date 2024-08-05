@@ -4,7 +4,11 @@
     "instrument": ["Gitarr", "Vocalist"],
     "img": ""
   },
-  { "name": "Mats Olsson", "instrument": ["Gitarr", "Vocalist"], "img": "" },
+  {
+    "name": "Mats Olsson",
+    "instrument": ["Gitarr", "Vocalist"],
+    "img": ""
+  },
   {
     "name": "Rickard Waerme",
     "instrument": ["Keyboard", "Vocalist"],

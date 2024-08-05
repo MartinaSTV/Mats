@@ -3,19 +3,18 @@ import members from "@/members.json";
 
 export default function Home() {
   return (
-    <main className="">
-      <article>
-        <h2>Bandet</h2>
-        <section className="flex">
+    <main>
+      <article className="p-5 flex flex-col text-xl">
+        <p className="mt-5 mb-5">
+          Spelar låtar från the swinging sixties & beyond! Dom brinner för
+          60-tals musik, lirar musik av The Beatles och mer.
+        </p>
+        <h2 className="self-center">Bandet</h2>
+        <section className="flex justify-evenly mb-10">
           {members.map((member, idx) => (
             <Members key={idx + "members"} member={member} />
           ))}
         </section>
-
-        <p>
-          Spelar låtar från the swinging sixties & beyond! Dom brinner för
-          60-tals musik, lirar musik av The Beatles och mer.
-        </p>
       </article>
     </main>
   );

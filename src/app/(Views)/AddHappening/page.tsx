@@ -22,35 +22,62 @@ const Happening = () => {
   };
 
   return (
-    <section>
-      <h1>Lägg till Event</h1>
-      <form action={SaveEvent} className="flex flex-col">
-        <div className="flex flex-col">
+    <section className="flex flex-col items-center border-b">
+      <h1 className="mt-5 mb-5">Skapa Event</h1>
+      <form action={SaveEvent} className="flex flex-col mb-10 w-[600px]">
+        <div className="flex flex-col mt-5">
           <label htmlFor="nameEvent">Namn på event</label>
           <input
             type="text"
             id="nameEvent"
             name="nameEvent"
-            className="border"
+            placeholder="Namn på event"
+            className="border h-[40px] w-[100%] "
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-5">
           <label htmlFor="place">Plats</label>
-          <input type="text" id="place" name="place" className="border" />
+          <input
+            type="text"
+            id="place"
+            name="place"
+            placeholder="Plats"
+            className="border h-[40px]"
+          />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-5">
           <label htmlFor="date">Datum</label>
-          <input type="date" id="date" name="date" className="border" />
+          <input
+            type="date"
+            id="date"
+            name="date"
+            className="border h-[40px]"
+          />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-5">
           <label htmlFor="aboutEvent">Beskrivning</label>
           <textarea
             name="aboutEvent"
             id="aboutEvent"
             placeholder="Beskrivning"
-            className="border"
+            className="border h-[100px]"
           ></textarea>
-          <button type="submit">Lägg till</button>
+          <div className="flex flex-col mt-5">
+            <label htmlFor="picture">Lägg till bild</label>
+            <input
+              type="file"
+              id="picture"
+              name="picture"
+              placeholder="drag and drop eller klicka på fil för att importera"
+              className="border h-[40px]"
+            />
+          </div>
+          <button
+            type="submit"
+            className="mt-5 border h-[60px] w-[150px] self-center rounded font-bold"
+          >
+            Lägg till event
+          </button>
         </div>
       </form>
     </section>
