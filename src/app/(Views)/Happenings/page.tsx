@@ -1,7 +1,6 @@
-import Show from "@/Components/show";
+import EventsShows from "@/Components/EventsShows";
 import dbClient from "@/db/mongodb";
 
-//TODO Error Message uppdatera delete
 const pageHappening = async () => {
   let events: IEvents[] = [];
   try {
@@ -20,11 +19,9 @@ const pageHappening = async () => {
   }
 
   return (
-    <section>
-      <h1>Pågång</h1>
-      {events?.length > 0
-        ? events?.map((data) => <Show key={data._id} event={data} />)
-        : "Inga events"}
+    <section className="flex flex-col">
+      <h1 className="self-center mt-10 text-xl">Kommande spelningar!</h1>
+      <EventsShows events={events} />
     </section>
   );
 };

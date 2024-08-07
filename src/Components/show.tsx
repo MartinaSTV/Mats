@@ -2,19 +2,10 @@
 
 interface IPropEvent {
   event: IEvents;
+  removeEvent: (id: string) => void;
 }
 
-const Show = ({ event }: IPropEvent) => {
-  const removeEvent = async () => {
-    try {
-      const resp = await fetch(`/api/removeEvent?id=${event._id}`, {
-        method: "DELETE",
-      });
-      return resp;
-    } catch (error) {
-      console.log("knde inte ta bort");
-    }
-  };
+const Show = ({ event, removeEvent }: IPropEvent) => {
   return (
     <section className="border mt-5 mb-5">
       <h2>{event.eventName}</h2>
@@ -27,7 +18,7 @@ const Show = ({ event }: IPropEvent) => {
 
       <button
         onClick={() => {
-          removeEvent();
+          removeEvent(event._id);
         }}
       >
         Ta bort event
