@@ -7,7 +7,7 @@ const NavBarForMeny = () => {
     { name: "Kontakt", url: "/Contact" },
   ];
   return (
-    <nav className="ml-auto mr-auto items-between space-x-10">
+    <nav className="ml-auto mr-auto text-xl items-between space-x-10">
       {navbar.map((pages, idx) => (
         <Link key={idx} href={pages.url}>
           {pages.name}

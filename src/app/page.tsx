@@ -10,7 +10,7 @@ export default function Home() {
           60-tals musik, lirar musik av The Beatles och mer.
         </p>
         <h2 className="self-center">Bandet</h2>
-        <section className="flex justify-evenly mb-10">
+        <section className="flex flex-col justify-evenly mb-10 sm:flex-row">
           {members.map((member, idx) => (
             <Members key={idx + "members"} member={member} />
           ))}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBarForMeny from "@/Components/NavBarForMeny";
+import Footer from "@/Components/Footer";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,17 +20,20 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body className={inter.className}>
-        <header className="flex items-center pt-10 pb-10 bg-sky-700 text-white">
-          <h1 className="text-xl ml-10">The Quarter Men</h1>
-          <NavBarForMeny />
+        <header className="flex items-center pt-10 pb-10 bg-gray-900 text-white">
+          <h1 className="text-2xl ml-10 font-bold">The Quarter Men</h1>
+          <div className="hidden sm:block sm:mr-auto sm:ml-auto">
+            <NavBarForMeny />
+          </div>
+
+          <button className="block mr-auto ml-auto sm:hidden ">
+            <Link href={"/NavigationMobile"}>Klick</Link>
+          </button>
         </header>
         {children}
-        <footer className="bg-sky-400 text-black ">
-          <div className="flex flex-col">
-            <Link href="/Login">Admin </Link>
-            <Link href="/AddHappening">Lägg till event</Link>
-          </div>
-        </footer>
+        <div className="hidden sm:block">
+          <Footer />
+        </div>
       </body>
     </html>
   );

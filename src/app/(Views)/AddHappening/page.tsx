@@ -24,7 +24,10 @@ const Happening = () => {
   return (
     <section className="flex flex-col items-center border-b">
       <h1 className="mt-5 mb-5">Skapa Event</h1>
-      <form action={SaveEvent} className="flex flex-col mb-10 w-[600px]">
+      <form
+        action={SaveEvent}
+        className="flex flex-col mb-10 md:w-[600px] sm:w-[300px]"
+      >
         <div className="flex flex-col mt-5">
           <label htmlFor="nameEvent">Namn på event</label>
           <input
@@ -32,7 +35,7 @@ const Happening = () => {
             id="nameEvent"
             name="nameEvent"
             placeholder="Namn på event"
-            className="border h-[40px] w-[100%] "
+            className="border h-[40px] w-[100%]"
           />
         </div>
         <div className="flex flex-col mt-5">

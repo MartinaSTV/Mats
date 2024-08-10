@@ -24,7 +24,6 @@ const EventsShows = ({ events }: IPropEvent) => {
       const resp = await fetch(`/api/removeEvent?id=${id}`, {
         method: "DELETE",
       });
-      console.log(resp);
       const removedEvent = initilaEventV.filter((data) => data._id !== id);
       setSuccess({ respSuccess: true, error: false, show: true });
       setInitialEventV(removedEvent);
@@ -34,7 +33,7 @@ const EventsShows = ({ events }: IPropEvent) => {
   };
 
   return (
-    <section className="relative">
+    <section className="relative flex flex-col">
       {initilaEventV?.length > 0
         ? initilaEventV?.map((data) => (
             <Show key={data._id} event={data} removeEvent={removeEvent} />
