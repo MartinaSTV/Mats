@@ -4,6 +4,8 @@ import "./globals.css";
 import NavBarForMeny from "@/Components/NavBarForMeny";
 import Footer from "@/Components/Footer";
 import Link from "next/link";
+import Image from "next/image";
+import hambIkon from "../assets/hamb.svg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,19 +21,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sv">
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-[100vh] flex flex-col`}>
         <header className="flex items-center pt-10 pb-10 bg-gray-900 text-white">
           <h1 className="text-2xl ml-10 font-bold">The Quarter Men</h1>
           <div className="hidden sm:block sm:mr-auto sm:ml-auto">
             <NavBarForMeny />
           </div>
-
           <button className="block mr-auto ml-auto sm:hidden ">
-            <Link href={"/NavigationMobile"}>Klick</Link>
+            <Link href={"/NavigationMobile"}>
+              <Image src={hambIkon} alt={"Meny"} height={30} width={30} />
+            </Link>
           </button>
         </header>
         {children}
-        <div className="hidden sm:block">
+        <div className="hidden mt-auto sm:block">
           <Footer />
         </div>
       </body>

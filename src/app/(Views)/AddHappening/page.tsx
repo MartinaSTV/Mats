@@ -23,7 +23,7 @@ const Happening = () => {
 
   return (
     <section className="flex flex-col items-center border-b">
-      <h1 className="mt-5 mb-5">Skapa Event</h1>
+      <h1 className="mt-5 mb-5 font-bold text-xl">Skapa Event</h1>
       <form
         action={SaveEvent}
         className="flex flex-col mb-10 md:w-[600px] sm:w-[300px]"
@@ -35,7 +35,7 @@ const Happening = () => {
             id="nameEvent"
             name="nameEvent"
             placeholder="Namn på event"
-            className="border h-[40px] w-[100%]"
+            className="border h-[40px] w-[100%] p-3"
           />
         </div>
         <div className="flex flex-col mt-5">
@@ -45,7 +45,7 @@ const Happening = () => {
             id="place"
             name="place"
             placeholder="Plats"
-            className="border h-[40px]"
+            className="border h-[40px] p-3"
           />
         </div>
         <div className="flex flex-col mt-5">
@@ -54,7 +54,7 @@ const Happening = () => {
             type="date"
             id="date"
             name="date"
-            className="border h-[40px]"
+            className="border h-[40px] p-3"
           />
         </div>
         <div className="flex flex-col mt-5">
@@ -63,7 +63,7 @@ const Happening = () => {
             name="aboutEvent"
             id="aboutEvent"
             placeholder="Beskrivning"
-            className="border h-[100px]"
+            className="border h-[100px] p-3"
           ></textarea>
           <div className="flex flex-col mt-5">
             <label htmlFor="picture">Lägg till bild</label>
@@ -77,7 +77,7 @@ const Happening = () => {
           </div>
           <button
             type="submit"
-            className="mt-5 border h-[60px] w-[150px] self-center rounded font-bold"
+            className="mt-5 h-[60px] w-[150px] self-center bg-black text-white rounded font-bold"
           >
             Lägg till event
           </button>

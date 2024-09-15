@@ -34,11 +34,13 @@ const EventsShows = ({ events }: IPropEvent) => {
 
   return (
     <section className="relative flex flex-col">
-      {initilaEventV?.length > 0
-        ? initilaEventV?.map((data) => (
-            <Show key={data._id} event={data} removeEvent={removeEvent} />
-          ))
-        : "Inga events"}
+      {initilaEventV?.length > 0 ? (
+        initilaEventV?.map((data) => (
+          <Show key={data._id} event={data} removeEvent={removeEvent} />
+        ))
+      ) : (
+        <p className="self-center mt-10">Inga events</p>
+      )}
       {success.show === true &&
         createPortal(
           <section className="absolute top-0 w-full h-full flex items-center justify-center bg-black bg-opacity-30">

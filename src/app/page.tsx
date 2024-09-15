@@ -6,7 +6,7 @@ export default function Home() {
     <main>
       <article className="p-5 flex flex-col text-xl">
         <p className="mt-5 mb-5">
-          Spelar låtar från the swinging sixties & beyond! Dom brinner för
+          Spelar låtar från the swinging sixties & beyond! Vi brinner för
           60-tals musik, lirar musik av The Beatles och mer.
         </p>
         <h2 className="self-center">Bandet</h2>

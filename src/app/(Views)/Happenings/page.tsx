@@ -3,7 +3,7 @@ import dbClient from "@/db/mongodb";
 
 const pageHappening = async () => {
   let events: IEvents[] = [];
-  try {
+  /*  try {
     events = await dbClient
       .db("quarterMen")
       .collection<IEvents>("shows")
@@ -16,7 +16,7 @@ const pageHappening = async () => {
     }));
   } catch (error) {
     console.log(error, "kunde inte hämta events");
-  }
+  } */
 
   return (
     <section className="flex flex-col">
